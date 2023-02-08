@@ -4,6 +4,8 @@ This is a [WoLua](https://github.com/PrincessRTFM/WoLua) command script for FFXI
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/PrincessRTFM/WoLua.gearsnap/master?label=updated)
 [![GitHub issues](https://img.shields.io/github/issues-raw/PrincessRTFM/WoLua.gearsnap?label=known%20issues)](https://github.com/PrincessRTFM/WoLua.gearsnap/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 
+[![Support me!](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V7IK9UU)
+
 ## Usage
 It is possible to configure your own sorting order for your inventory, and even to set different orders for different inventories. For example, your main inventory, armoury chest, retainer, and saddlebags can all have custom sorting orders. However, the means to do so in vanilla is clunky and not well documented. For example, you can use multiple conditions, but this isn't mentioned in the official documentation - nor is it mentioned that the conditions are LIFO, so the _last_ one you enter is the _first_ one applied. For another, macros only run to fifteen lines, so if you want details sorting, especially of multiple inventory types, you have to use multiple macros in a row.
 
