@@ -5,7 +5,7 @@ local direction = {
 	["-"] = "des",
 }
 
-local err = Game ~= nil and Game.PrintError or print
+local message, warning, pause, output, live = table.unpack(require 'context')
 
 local function assembleCommands(argline)
 	local inventories, criteria = extractSegments(argline)
@@ -19,7 +19,7 @@ local function assembleCommands(argline)
 			if dir then
 				table.insert(lines, string.format("/itemsort condition %s %s %s", inv, stat, dir))
 			else
-				err("No direction or invalid symbol for [" .. filter .. "] (must prefix filter stat with +/- for ascending/descending order)")
+				warning("No direction or invalid symbol for [" .. filter .. "] (must prefix filter stat with +/- for ascending/descending order)")
 			end
 		end
 		table.insert(lines, "/itemsort execute " .. inv)

@@ -77,7 +77,7 @@ local conditionAliases = {
 
 local split = require 'split'
 
-local err = Game ~= nil and Game.PrintError or print
+local message, warning, pause, output, live = table.unpack(require 'context')
 
 local function extractSegments(argline)
 	local targetstr, orderstr = argline:lower():match("([a-z,]+)%s+(.+)")
@@ -94,7 +94,7 @@ local function extractSegments(argline)
 		if inventories[v] then
 			table.insert(targets, v)
 		else
-			err(string.format("Filtering out invalid inventory name %s", v))
+			warning(string.format("Filtering out invalid inventory name %s", v))
 		end
 	end
 	for i,v in ipairs(rawCriteria) do
@@ -104,7 +104,7 @@ local function extractSegments(argline)
 		if conditions[v:sub(2)] then
 			table.insert(criteria, v)
 		else
-			err(string.format("Filtering out invalid sorting criteria string %s", v))
+			warning(string.format("Filtering out invalid sorting criteria string %s", v))
 		end
 	end
 	return targets, criteria
