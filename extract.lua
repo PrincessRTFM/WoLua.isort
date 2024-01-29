@@ -79,6 +79,10 @@ local split = require "split"
 
 local message, warning, pause, output, live = table.unpack(require "context")
 
+---Takes the user's sorting specification for a group of inventories and their ordering, and produces the alias-resolved list of inventory names and sorting criteria to operate on
+---@param argline string The set of comma-separated inventories followed by space-separated sorting criteria
+---@return table inventories The list of inventories that these sorting criteria apply to
+---@return table criteria The list of sorting criteria to apply to these inventories
 local function extractSegments(argline)
 	local targetstr, orderstr = argline:lower():match("([a-z,]+)%s+(.+)")
 	local rawTargets = split(tostring(targetstr), ",")

@@ -9,6 +9,8 @@ if isLive then
 	message = Game.PrintMessage
 	warning = Game.PrintError
 	pause = Script.QueueDelay
+	---Queues a line of text to be entered as a chat command
+	---@param content string The chat command t0 queue
 	output = function(content) Script.QueueAction(Game.SendChat, content) end
 else
 	message = function(content) print("[PRINT] " .. content) end

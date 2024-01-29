@@ -7,6 +7,9 @@ local direction = {
 
 local message, warning, pause, output, live = table.unpack(require "context")
 
+---Takes the user's sorting specification for a group of inventories and their ordering, and produces the `/itemsort` commands to sort the given inventories in the given order
+---@param argline string The set of comma-separated inventories followed by space-separated sorting criteria
+---@return table commands The inventory sorting commands to execute, in order
 local function assembleCommands(argline)
 	local inventories, criteria = extractSegments(argline)
 	local lines = {}
