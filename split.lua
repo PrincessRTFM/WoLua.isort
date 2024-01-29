@@ -1,5 +1,11 @@
+---Split a string into a table on a given separator, optionally limiting the number of splits and treating the separator as plain text or a pattern
+---@param target string The whole string to be split
+---@param separator string The pattern (or substring) to split on
+---@param maxSplits? number The maximum number of times to split, or -1 for infinite
+---@param plain? boolean Whether to treat the separator as a substring instead of a pattern
+---@return table split The list of substrings between the separators
 local function split(target, separator, maxSplits, plain)
-	self = tostring(target)
+	local self = tostring(target)
 	maxSplits = math.floor(tonumber(maxSplits) or -1)
 	if maxSplits == 0 then maxSplits = -1 end
 	assert(separator ~= "")
