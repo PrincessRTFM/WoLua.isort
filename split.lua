@@ -2,7 +2,7 @@ local function split(target, separator, maxSplits, plain)
 	self = tostring(target)
 	maxSplits = math.floor(tonumber(maxSplits) or -1)
 	if maxSplits == 0 then maxSplits = -1 end
-	assert(separator ~= '')
+	assert(separator ~= "")
 	assert(maxSplits == -1 or maxSplits > 0)
 	local results = {}
 	if self:len() > 0 then

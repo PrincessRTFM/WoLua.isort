@@ -17,4 +17,4 @@ else
 	output = function(content) print("[QUEUE] " .. content) end
 end
 
-return {message, warning, pause, output, isLive}
+return { message, warning, pause, output, isLive }

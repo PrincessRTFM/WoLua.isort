@@ -1,16 +1,16 @@
-local extractSegments = require 'extract'
+local extractSegments = require "extract"
 
 local direction = {
-	["+"] = "asc",
-	["-"] = "des",
+	["+"] = "asc";
+	["-"] = "des";
 }
 
-local message, warning, pause, output, live = table.unpack(require 'context')
+local message, warning, pause, output, live = table.unpack(require "context")
 
 local function assembleCommands(argline)
 	local inventories, criteria = extractSegments(argline)
 	local lines = {}
-	for _,inv in ipairs(inventories) do
+	for _, inv in ipairs(inventories) do
 		table.insert(lines, "/itemsort clear " .. inv)
 		for i = #criteria, 1, -1 do
 			local filter = criteria[i]
